@@ -1,0 +1,35 @@
+<!--
+  This is the page where the users will create their list. They will input a
+  task and then that task will appear in the list below. Users will also have the option to
+  remove tasks from the list. 
+-->
+<ion-header>
+
+  <ion-navbar>    
+    <ion-title>To-Do List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onAddItem(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Task</ion-label>
+        <ion-input type="text" name="taskName" ngModel required></ion-input>
+      </ion-item>
+    </ion-list>
+   <button ion-button type="submit" block [disabled]="!f.valid">Add Task</button>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let task of listItems; let i=index">
+      <h1>{{ task.name }}&nbsp;<button ion-button (click)="onCheckItem(i)">
+        <ion-icon name="remove"></ion-icon></button>
+      </h1>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round color="secondary" (click)="onLogOut()">Log Out</button>
+</ion-content>

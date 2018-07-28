@@ -1,14 +1,27 @@
+<!--
+  This is the home page of the app. This is where users will have the option to sign
+  in to their account or to sign up for an account with this app.
+-->
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      To-Do List Home
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      Welcome to the To-Do List App
+    </ion-card-header>
+    <ion-card-content>
+      Sign in if you are a member or sign up to register with us!
+    </ion-card-content>
+  </ion-card>
+
+  <ion-buttons>
+    <button ion-button round color="danger" (click)="goToLogin()">Sign In</button>
+    <button ion-button round color="danger" (click)="goToSignUp()">Sign Up</button>
+  </ion-buttons>
 </ion-content>
